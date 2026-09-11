@@ -1,18 +1,24 @@
-# VerdantLoop Logistics: Perishable Cold-Chain Risk Analytics
+# Cold-Chain Logistics Analytics & Spoilage Risk Prediction
 
-## 📌 Executive Summary
-VerdantLoop Logistics delivers fresh greens with strict 3-5 day shelf life. Micro-climate temp failures during transit lead to silent spoilage. This end-to-end data pipeline processes 8,000+ shipment logs using Python ETL, Gemini LLM text parsing, SQLite, SciPy hypothesis testing, XGBoost ML, and Tableau visualization.
+End-to-end analytics project that turns raw cold-chain telemetry and unstructured driver logs into a predictive spoilage-risk system, with a Tableau dashboard for stakeholder reporting.
 
-🔗 **[Live Tableau Interactive Dashboard](PASTE_YOUR_TABLEAU_PUBLIC_LINK_HERE)**
+## Problem
+Cold-chain logistics operations generate telemetry data and unstructured driver logs, but failures were typically only caught after spoilage had already occurred. This project builds an early-warning system instead.
 
-## 🛠️ Technical Architecture & Stack
-- **Data Engineering:** Python (Pandas, NumPy), SQLite Database
-- **GenAI Text Extraction:** Google Gemini API (`gemini-2.5-flash`) for driver notes parsing
-- **Statistical Testing:** SciPy Two-Sample Independent T-Test ($p < 0.05$)
-- **Machine Learning:** XGBoost Classifier (ROC-AUC: 0.91)
-- **Business Intelligence:** Tableau Public
+## What this project does
+- Processes raw cold-chain telemetry data using **Pandas**
+- Integrates the **Google Gemini API** to extract structured failure categories from unstructured driver logs stored in **SQLite**
+- Trains an **XGBoost Classifier** to predict high spoilage-risk shipments, optimized for ROC-AUC
+- Exports the transformed, model-scored data to **Tableau** for stakeholder-facing reporting
 
-## 📊 Key Results & Findings
-- **8,000** total shipments analyzed with a **24.3%** high-spoilage risk rate.
-- **T-Test Proof:** Confirmed temperature spikes above $6^\circ\text{C}$ significantly increase operational dwell delays ($p < 0.05$).
-- **Top Delay Driver:** GenAI extraction identified **Hub Dwell Delay** as the main cause for cold-chain degradation.
+## Tools & Stack
+Python · Pandas · SQLite · Google Gemini API · XGBoost · Tableau
+
+## Dashboard
+🔗 [View the live Tableau dashboard](https://public.tableau.com/app/profile/jasvinder.kaur8501/vizzes) *(link to the specific viz once published)*
+
+## Outcome
+A predictive system that flags high-risk shipments before spoilage occurs, replacing after-the-fact reporting with early, actionable warnings.
+
+## Author
+Jasvinder Kaur — [LinkedIn](https://www.linkedin.com/in/jasvinder-kaur-406b13285/) · [Kaggle](https://www.kaggle.com/jasvinderkaur13)
